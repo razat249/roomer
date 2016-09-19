@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Neighborhood Map</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container-fluid">
+
+	<section class="row">
+		<div id="list" class="col-xs-3">
+			<input placeholder="Search" class="form-control" data-bind="value: filterString, valueUpdate: 'afterkeydown'" />
+			<br>
+			<!-- <button data-bind="click: pupu">Pupu</button> -->
+			<ul data-bind="foreach: filteredList" class="list-group">
+				<li data-bind="text: address, click: $parent.openInfo" class="list-group-item"></li>
+			</ul>
+		</div>
+
+	    <div id="map" class="col-xs-9"></div>
+	</section>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/knockout-3.4.0.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1r8hd2A9KTZBW9Wp778cVfSaOQA2zN_o" async defer></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
