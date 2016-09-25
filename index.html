@@ -8,26 +8,33 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="container-fluid">
+<body>
 
-	<section class="row">
-		<div id="list" class="col-xs-3">
-			<input placeholder="Search" class="form-control" data-bind="value: filterString, valueUpdate: 'afterkeydown'" />
-			<br>
-			<!-- <button data-bind="click: pupu">Pupu</button> -->
-			<ul data-bind="foreach: filteredList" class="list-group">
-				<li data-bind="text: address, click: $parent.openInfo" class="list-group-item"></li>
-			</ul>
+	<!-- Use any element to open the sidenav -->
+	<button onclick="openNav()" class="hamberger btn btn-default">&#9776;</button>
+
+
+	<section id="main">
+		<div id="mySidenav" class="sidenav">
+			<div class="form-list">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<input placeholder="Search" class="form-control" data-bind="value: filterString, valueUpdate: 'afterkeydown'" />
+				<br>
+				<!-- <button data-bind="click: pupu">Pupu</button> -->
+				<ul data-bind="foreach: filteredList" class="list-group">
+					<li data-bind="text: address, click: $parent.openInfo" class="list-group-item"></li>
+				</ul>		
+			</div>
 		</div>
 
-	    <div id="map" class="col-xs-9"></div>
+	    <div id="map"></div>
 	</section>
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/knockout-3.4.0.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1r8hd2A9KTZBW9Wp778cVfSaOQA2zN_o" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt5TCVAEP4C2vfEbX84dyqH_r42fAr3dM" async defer></script>
 	<script src="js/app.js"></script>
 </body>
 </html>
